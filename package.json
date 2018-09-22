@@ -1,0 +1,17 @@
+{
+  "name": "maggieseaport",
+  "version": "1.0.0",
+  "description": "Maggie's Schedule Seaport",
+  "main": "server.js",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "fs": "^0.0.1-security",
+    "googleapis": "^32.0.0",
+    "nodemailer": "^4.6.7",
+    "puppeteer": "^1.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "author": "Mike Schulte",
+  "license": "MIT"
+}
