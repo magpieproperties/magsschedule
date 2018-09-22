@@ -25,7 +25,7 @@ async function getMaggieSeaportData(){
 
 
 //const browser = await puppeteer.launch({headless:false ,args:['--ignore-certificate-errors','--disable-gpu','--window-size=1366,768',"--proxy-server='direct://'",'--proxy-bypass-list=*']},{sloMo: 350}, {ignoreHTTPSErrors: true});
-const browser = await puppeteer.launch({headless:false ,args:['--ignore-certificate-errors','--disable-gpu','--window-size=1366,768']},{sloMo: 350}, {ignoreHTTPSErrors: true});
+const browser = await puppeteer.launch({headless:true ,args:['--ignore-certificate-errors','--disable-gpu','--window-size=1366,768']},{sloMo: 350}, {ignoreHTTPSErrors: true});
 
 const page = await browser.newPage();
 const navigationPromise = page.waitForNavigation();
