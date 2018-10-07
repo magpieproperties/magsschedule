@@ -25,7 +25,7 @@ async function getMaggieSeaportData(){
 
 
 //const browser = await puppeteer.launch({headless:false ,args:['--ignore-certificate-errors','--disable-gpu','--window-size=1366,768',"--proxy-server='direct://'",'--proxy-bypass-list=*']},{sloMo: 350}, {ignoreHTTPSErrors: true});
-const browser = await puppeteer.launch({headless:true ,args:['--ignore-certificate-errors','--disable-gpu','--window-size=1366,768']},{sloMo: 350}, {ignoreHTTPSErrors: true});
+const browser = await puppeteer.launch({headless:false ,args:['--ignore-certificate-errors','--disable-gpu','--window-size=1366,768']},{sloMo: 350}, {ignoreHTTPSErrors: true});
 
 const page = await browser.newPage();
 const navigationPromise = page.waitForNavigation();
@@ -41,6 +41,8 @@ try
 catch(err){
   console.log(err);
 }
+
+await page.waitFor(3000);
 
 await page.click('#Username');
 await page.keyboard.type(process.env.SEAPORT_USERNAME);
@@ -61,7 +63,7 @@ await page.waitFor(2000);
 
 await page.click('#bootstrap-override > app-today > tabbar > div > div > div:nth-child(2) > a',{delay:2000});
 
-await page.waitFor(3000);
+await page.waitFor(5000);
 
  await page.screenshot({path: 'maggieData.jpg', fullPage: true});
 
