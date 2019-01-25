@@ -25,7 +25,7 @@ async function getMaggieSeaportData(){
 
 
 //const browser = await puppeteer.launch({headless:false ,args:['--ignore-certificate-errors','--disable-gpu','--window-size=1366,768',"--proxy-server='direct://'",'--proxy-bypass-list=*']},{sloMo: 350}, {ignoreHTTPSErrors: true});
-const browser = await puppeteer.launch({headless:true ,args:['--ignore-certificate-errors','--disable-gpu','--window-size=1366,768']},{sloMo: 350}, {ignoreHTTPSErrors: true});
+const browser = await puppeteer.launch({headless:true,args:['--no-sandbox','--disable-setuid-sandbox','--ignore-certificate-errors','--disable-gpu','--window-size=1366,768',"--proxy-server='direct://'",'--proxy-bypass-list=*','--enable-features=NetworkService']},{sloMo: 350}, {ignoreHTTPSErrors: true});
 
 const page = await browser.newPage();
 const navigationPromise = page.waitForNavigation();
@@ -42,7 +42,7 @@ catch(err){
   console.log(err);
 }
 
-await page.waitFor(3000);
+await page.waitFor(5000);
 
 await page.click('#Username');
 await page.keyboard.type(process.env.SEAPORT_USERNAME);
